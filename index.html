@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Perhitungan Ketebalan Punggung Buku</title>
+	<link rel="stylesheet" href="css/style.css">
+</head>
+
+<body>
+	<div class="container">
+		<h1>Perhitungan Ketebalan Punggung Buku</h1>
+		<form id="bookCalculator">
+			<label for="pages">Jumlah Halaman:</label>
+			<input type="number" id="pages" placeholder="Masukkan jumlah halaman" min="1" required>
+
+			<label for="paperThickness">Gramatur Kertas:</label>
+			<select id="paperThickness">
+			  <option value="0.1">HVS 70 gr</option>
+			  <option value="0.12">HVS 80 gr</option>
+			  <option value="0.15">HVS 100 gr</option>
+			  <option value="0.2">HVS 200 gr</option>
+		    <option value="0.1280769230769231">BPP 72 gr</option>
+				<option value="0.12">AP 150 gr</option>
+			</select>
+
+			<label for="coverThickness">Ketebalan Sampul Hardcover (mm):</label>
+			<input type="number" id="coverThickness" value="2.5" min="1" step="0.1" required>
+
+			<button type="submit">Hitung</button>
+		</form>
+		<div id="results">
+			<h2>Hasil:</h2>
+			<p>
+				<strong>Softcover:</strong> <span id="softcoverResult">-</span> mm
+				<button id="copySoftcover" class="copy-btn">Copy</button>
+			</p>
+			<p>
+				<strong>Hardcover:</strong> <span id="hardcoverResult">-</span> mm
+				<button id="copyHardcover" class="copy-btn">Copy</button>
+			</p>
+			<div id="notification" style="display: none;">Hasil telah disalin ke clipboard!</div>
+		</div>
+	</div>
+	<script src="js/script.js"></script>
+</body>
+
+</html>
